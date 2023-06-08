@@ -1,0 +1,10 @@
+.content-body {
+  background-image: url("src\assets\5073414.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
