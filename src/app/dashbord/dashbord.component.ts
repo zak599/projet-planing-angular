@@ -69,11 +69,23 @@ export class DashbordComponent implements OnInit {
       console.log(res);
       let scheduleTmp: any[] = [];
       res.map(function (res) {
+        const eventDate = new Date(res.Date);
+        const eventTime = res.heure
+          ? res.heure.toString().padStart(2, '0') + ':00'
+          : '';
+        const eventDateTime = new Date(
+          eventDate.getFullYear(),
+          eventDate.getMonth(),
+          eventDate.getDate(),
+          parseInt(eventTime.slice(0, 2)),
+          parseInt(eventTime.slice(3, 5))
+        );
+
         scheduleTmp.push({
           id: res._id,
           title: `${res.theme} - Avec ${res.professeurs[0].nom}`,
           teacherName: res.professeurs[0].nom,
-          date: res.Date,
+          date: eventDateTime,
         });
       });
       this.scheduleData = res;

@@ -24,18 +24,16 @@ export class CourseDialogComponent {
   });
 
   createSchedule() {
-    console.log("this.scheduleForm.value", this.scheduleForm.value)
+    console.log('this.scheduleForm.value', this.scheduleForm.value);
     if (this.scheduleForm.invalid) {
       return;
     }
     const data = {
       ...this.scheduleForm.value,
-      id_professeur: [localStorage.getItem('id')]
-    }
-    this.scheduleService
-      .createSchedule(data)
-      .subscribe((res) => {
-        window.location.reload();
-      });
+      id_professeur: [localStorage.getItem('id')],
+    };
+    this.scheduleService.createSchedule(data).subscribe((res) => {
+      window.location.reload();
+    });
   }
 }

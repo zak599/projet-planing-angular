@@ -3,6 +3,8 @@
   justify-content: space-between;
   margin-bottom: 15px;
 }
-.calendar-container {
-  background-color: white;
+
+.container {
+  background-color: aliceblue;
+  margin: 5em auto;
 }
