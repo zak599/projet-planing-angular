@@ -19,14 +19,14 @@ form {
 
 mat-card {
   max-width: 600px;
-  margin: 2em auto;
+  margin: 12em auto;
   text-align: center;
   max-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 228, 196, 0.668);
+  background-color: #e7ddd1ac;
 }
 
 .header {

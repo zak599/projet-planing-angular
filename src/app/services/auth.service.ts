@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap, throwError, catchError} from 'rxjs';
-
+import { tap, throwError, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-   login(email: string, password: string) {
+  login(email: string, password: string) {
     return this.http
       .post<any>('http://localhost:3000/auth/login', {
         email,
@@ -19,11 +18,11 @@ export class AuthService {
       })
       .pipe(
         tap((response: any) => {
-          console.log("response:", response.id)
+          console.log('response:', response.id);
           this.loggedIn = true;
           localStorage.setItem('token', response?.token);
           localStorage.setItem('role', response?.role);
-          localStorage.setItem('id', response?.id)
+          localStorage.setItem('id', response?.id);
         }),
         catchError((error: any) => {
           this.loggedIn = false;
@@ -45,31 +44,31 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this.http.post<any>(`http://localhost:3000/auth/register`, user)
+    return this.http
+      .post<any>(`http://localhost:3000/auth/register`, user)
       .pipe(
-        tap((response: any) => {
-
-        }),
+        tap((response: any) => {}),
         catchError((error: any) => {
           return throwError(error);
         })
-      )
+      );
   }
 
-  getTeacherById(id:string) {
-      return this.http.get<any>(`http://localhost:3000/professeur/${id}`)
-  } 
+  getTeacherById(id: string) {
+    return this.http.get<any>(`http://localhost:3000/professeur/${id}`);
+  }
 }
 
-type Role = 'eleve' | 'professeur';
+export type Role = 'eleve' | 'professeur';
+
 export type User = {
-  nom: string
+  nom: string;
   email: string;
   address: Address;
   telephone: string;
   password: string;
   userType: Role;
-}
+};
 
 export type Address = {
   rue: string;
@@ -77,4 +76,4 @@ export type Address = {
   codePostale: number;
   ville: string;
   pays: string;
-}
+};
