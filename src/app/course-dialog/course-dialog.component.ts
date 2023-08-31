@@ -47,7 +47,7 @@ export class CourseDialogComponent {
 
     const data = {
       ...this.scheduleForm.value,
-      id_professeur: localStorage.getItem('id'),
+      id_professeur: [localStorage.getItem('id')],
     };
 
     this.scheduleService.createSchedule(data).subscribe((res) => {
