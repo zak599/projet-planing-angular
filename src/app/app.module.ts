@@ -27,11 +27,16 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RegisterComponent } from './register/register.component';
 import { MatSelectModule } from '@angular/material/select';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { WelcomePopupComponent } from './welcome-popup/welcome-popup.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +49,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     NavMenuComponent,
     RegisterComponent,
     CourseDialogComponent,
+    ForgotPasswordComponent,
+    NavbarComponent,
+    WelcomePopupComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

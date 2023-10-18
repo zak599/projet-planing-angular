@@ -7,6 +7,7 @@ import { tap, throwError, catchError } from 'rxjs';
 })
 export class AuthService {
   private loggedIn = false;
+  user: User | null = null; // Propriété pour stocker les informations de l'utilisateur
 
   constructor(private http: HttpClient) {}
 

@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { WelcomePopupComponent } from '../welcome-popup/welcome-popup.component';
 
 /*import { LoginService } from '../login.service';*/
 
@@ -19,7 +21,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {}
@@ -48,6 +51,12 @@ export class LoginComponent implements OnInit {
           });
         }
       );
+  }
+  openWelcomePopup(): void {
+    const dialogRef = this.dialog.open(WelcomePopupComponent, {
+      width: '400px',
+      data: { user: this.authService.user?.email }, // Assurez-vous d'injecter les informations de l'utilisateur ici
+    });
   }
   goToRegister() {
     this.router.navigate(['register']);

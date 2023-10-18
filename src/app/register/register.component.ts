@@ -32,7 +32,7 @@ export class RegisterComponent {
     pays: ['', [Validators.required]],
   });
 
-  onRegister() {
+  async onRegister() {
     if (this.registerForm.invalid) {
       return;
     }
