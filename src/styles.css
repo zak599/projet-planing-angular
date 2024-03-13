@@ -1,3 +1,24 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #333333;
+
+  --background-color-dark: #333333;
+  --text-color-dark: #ffffff;
+}
+
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
 html,
 body {
   height: 100%;
@@ -131,4 +152,9 @@ td {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
+}
+
+body.dark-mode .my-element {
+  background-color: #333333;
+  color: #ffffff;
 }

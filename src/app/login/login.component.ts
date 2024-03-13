@@ -53,9 +53,11 @@ export class LoginComponent implements OnInit {
       );
   }
   openWelcomePopup(): void {
-    const dialogRef = this.dialog.open(WelcomePopupComponent, {
-      width: '400px',
-      data: { user: this.authService.user?.email }, // Assurez-vous d'injecter les informations de l'utilisateur ici
+    this.authService.user$.subscribe((user) => {
+      const dialogRef = this.dialog.open(WelcomePopupComponent, {
+        width: '400px',
+        data: { user: user?.email }, // Assurez-vous d'injecter les informations de l'utilisateur ici
+      });
     });
   }
   goToRegister() {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatRadioModule } from '@angular/material/radio';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +37,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomePopupComponent } from './welcome-popup/welcome-popup.component';
 import { HomeComponent } from './home/home.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     WelcomePopupComponent,
     HomeComponent,
+    ContactListComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +82,7 @@ import { HomeComponent } from './home/home.component';
     MatSnackBarModule,
     MatOptionModule,
     MatSelectModule,
+    MatRadioModule,
     FullCalendarModule,
   ],
   providers: [],

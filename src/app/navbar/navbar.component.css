@@ -1,8 +1,10 @@
 /* Styles pour le mode sombre */
-.dark-mode {
-  background-color: #333; /* Exemple de couleur de fond en mode sombre */
-  color: #fff; /* Exemple de couleur de texte en mode sombre */
+body.dark-mode .my-element {
+  background-color: #333333;
+  color: #ffffff;
 }
 .navbar {
-  min-height: 80px; /* Ajustez la valeur en pixels selon vos besoins */
+  min-height: 50px; /* Ajustez la valeur en pixels selon vos besoins */
+  z-index: 100;
+  background-color: #dddbdc; /* Couleur de fond de la barre de navigation */
 }

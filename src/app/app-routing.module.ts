@@ -7,8 +7,10 @@ import { AuthGuard } from './guard/auth.guard';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,
@@ -29,6 +31,10 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactListComponent,
   },
 ];
 

@@ -3,11 +3,11 @@ import { ScheduleService, ScheduleType } from '../services/schedule.service';
 import { AuthService } from '../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
-import { CalendarOptions, EventClickArg } from '@fullcalendar/core'; // useful for typechecking
+import { CalendarOptions, EventClickArg } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import { DialogComponent } from '../dialog/dialog.component';
-import frLocale from '@fullcalendar/core/locales/fr'; // Import the locale
+import frLocale from '@fullcalendar/core/locales/fr';
 
 @Component({
   selector: 'app-dashbord',

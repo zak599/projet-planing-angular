@@ -1,3 +1,13 @@
+.register-form-container {
+  background-image: url("src\assets\work.jpg"); /* Chemin vers votre image */
+  top: 50px;
+  background-size: cover; /* Ajustez la taille selon les besoins */
+  background-position: center; /* Positionnez l'image au centre si nécessaire */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 form {
   max-width: 600px;
   display: flex;
@@ -26,7 +36,7 @@ mat-card {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e7ddd1ac;
+  background-color: #99a8b3;
 }
 
 .header {

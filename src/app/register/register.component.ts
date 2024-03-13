@@ -69,6 +69,6 @@ export class RegisterComponent {
   }
 
   backToLogin() {
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 }

@@ -1,7 +1,8 @@
+<img src="assets/about.jpg" alt="Background" class="background-image" />
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <p>Sign Into Your Account</p>
+      <p>Connectez-vous à votre compte</p>
     </div>
     <form name="loginForm" [formGroup]="loginForm">
       <div class="emailInput">
@@ -10,13 +11,13 @@
           <input
             formControlName="email"
             matInput
-            placeholder="Enter email address"
+            placeholder="Email"
             required
             [value]="loginForm.get('email')?.value"
           />
 
           <mat-error *ngIf="!loginForm.controls['email'].valid">
-            Email is required
+            Votre e-mail est requis
           </mat-error>
         </mat-form-field>
       </div>
@@ -24,11 +25,11 @@
       <div>
         <span>
           <a class="text-link" class="aLink" routerLink="/forgot-password"
-            >Forgot Password?</a
+            >Mot de passe oublié?</a
           >
         </span>
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Password</mat-label>
+          <mat-label>Mot de passe</mat-label>
           <input
             formControlName="password"
             matInput
@@ -49,7 +50,7 @@
             </mat-icon>
           </button>
           <mat-error *ngIf="!loginForm.controls['password'].valid">
-            Password is required
+            Votre mot de passe est requis
           </mat-error>
         </mat-form-field>
       </div>
@@ -57,9 +58,8 @@
     </form>
 
     <div class="account-register">
-      <span>Don't have an account ?</span>
       <a class="text-link" class="aLink" routerLink="/register"
-        >Create an account</a
+        >Créer un compte</a
       >
     </div>
   </mat-card-content>

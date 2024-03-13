@@ -1,0 +1,52 @@
+<button class="my-button" (click)="changeTab('professors')">Professeurs</button>
+<button class="my-button" (click)="changeTab('students')">Étudiants</button>
+
+<div class="contact-page">
+  <img src="assets/tableau.jpg" alt="Background" class="background-image" />
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">
+          <input
+            type="text"
+            placeholder="Filtrer par nom"
+            [(ngModel)]="filterName"
+            (input)="applyFilter()"
+          />
+        </th>
+        <th scope="col">
+          <input
+            type="text"
+            placeholder="Filtrer par email"
+            [(ngModel)]="filterEmail"
+            (input)="applyFilter()"
+          />
+        </th>
+        <th scope="col">
+          <input
+            type="text"
+            placeholder="Filtrer par téléphone"
+            [(ngModel)]="filterPhone"
+            (input)="applyFilter()"
+          />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="activeTab === 'professors'">
+        <tr *ngFor="let professor of filteredData">
+          <td>{{ professor.nom }}</td>
+          <td>{{ professor.email }}</td>
+          <td>{{ professor.telephone }}</td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf="activeTab === 'students'">
+        <tr *ngFor="let student of filteredData">
+          <td>{{ student.nom }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.telephone }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

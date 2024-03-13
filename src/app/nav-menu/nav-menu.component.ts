@@ -8,7 +8,6 @@ import { AuthService } from '../services/auth.service';
   providers: [AuthService],
 })
 export class NavMenuComponent {
-
   constructor(private authService: AuthService) {}
 
   logout() {
